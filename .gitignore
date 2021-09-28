@@ -1,0 +1,12 @@
+.vs
+*.suo
+*[Bb]in/
+*[Oo]bj/
+*[Dd]ebug/
+*.user
+/src/packages
+*.lock.json
+*.nupkg
+*.dll
+*.targets
+project.lock.json
