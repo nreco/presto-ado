@@ -23,6 +23,11 @@ namespace NReco.PrestoAdo {
             set => this["Port"] = value;
         }
 
+        public bool TrinoHeaders {
+            get => TryGetValue("TrinoHeaders", out var value) ? IsYesTrueOne(value) : false;
+            set => this["TrinoHeaders"] = value;
+        }
+
         public string User {
             get => TryGetValue("User", out var value) ? value as string : String.Empty;
             set => this["User"] = value;
@@ -49,7 +54,7 @@ namespace NReco.PrestoAdo {
         }
 
         public bool IgnoreSslErrors {
-            get => TryGetValue("IgnoreSslErrors", out var value) ? "true".Equals(value as string, StringComparison.OrdinalIgnoreCase) : false;
+            get => TryGetValue("IgnoreSslErrors", out var value) ? IsYesTrueOne(value) : false;
             set => this["IgnoreSslErrors"] = value;
         }
 
@@ -62,5 +67,12 @@ namespace NReco.PrestoAdo {
             get => TryGetValue("ClientRequestTimeout", out var value) && value is string @string && int.TryParse(@string, out var @int) ? @int : -1;
             set => this["ClientRequestTimeout"] = value;
         }
-    }
+
+        bool IsYesTrueOne(object val) {
+            var valStr = Convert.ToString(val);
+			return valStr == "1"
+				|| "one".Equals(valStr, StringComparison.OrdinalIgnoreCase)
+				|| "true".Equals(valStr, StringComparison.OrdinalIgnoreCase);
+		}
+	}
 }

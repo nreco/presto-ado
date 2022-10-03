@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Description>ADO.NET Provider for Presto/Trino.</Description>
 	<Title>Presto/Trino .NET driver</Title>
-    <Copyright>Copyright (c) 2021 Vitalii Fedorchenko</Copyright>
+    <Copyright>Copyright (c) 2022 Vitalii Fedorchenko</Copyright>
     <AssemblyTitle>NReco.PrestoAdo</AssemblyTitle>
-    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionPrefix>1.1.0</VersionPrefix>
     <Authors>Vitalii Fedorchenko</Authors>
 	<TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -14,6 +14,11 @@
     <PackageId>NReco.PrestoAdo</PackageId>
     <PackageTags>Presto;PrestoDB;Trino;ADO</PackageTags>
 	<PackageReleaseNotes>Source code: https://github.com/nreco/presto-ado
+	
+v.1.1 changes:
+- updated PrestoClient reference to the newest 0.351.0-beta (can switch between Presto/Trino headers prefix)
+- added a connection string property TrinoHeaders (bool, false by default for the backward compatibility) 	
+	
 </PackageReleaseNotes>	
     <PackageIconUrl>https://www.nrecosite.com/img/nreco-logo-200.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/nreco/presto-ado</PackageProjectUrl>
@@ -36,7 +41,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="PrestoClient" Version="0.198.5" />
+    <PackageReference Include="PrestoClient" Version="0.351.0-beta" />
   </ItemGroup>
   
 </Project>

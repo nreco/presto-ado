@@ -41,7 +41,8 @@ namespace NReco.PrestoAdo {
                     CheckInterval = builder.CheckInterval,
                     IgnoreSslErrors = builder.IgnoreSslErrors,
                     UseSsl = builder.UseSsl,
-                    ClientRequestTimeout = builder.ClientRequestTimeout
+                    ClientRequestTimeout = builder.ClientRequestTimeout,
+                    EnableLegacyHeaderCompatibility = !builder.TrinoHeaders
                 };
 	            if (!String.IsNullOrEmpty(builder.User))
 				    config.User = builder.User;
